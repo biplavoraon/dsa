@@ -8,7 +8,6 @@ public class SubsetSum {
         // Your code goes here
         int[][] dp = new int[n + 1][sum + 1];
         int mod = (int) (1e9 + 7);
-        int countZero = 0;
 
         for (int i = 0; i <= n; i++)
             dp[i][0] = 1;
