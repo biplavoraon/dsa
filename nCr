@@ -1,0 +1,35 @@
+private long findnCr(long n, long r, int mod) {
+        if (n < r)
+            return 0;
+        if (r == 0)
+            return 1;
+
+        if (n - r < r)
+            return findnCr(n, n - r, mod);
+
+        long res = 1, num = n % mod;
+
+        for (long i = r; i >= 1; i--)
+        {
+            res = (res * ((num * exp(i, mod - 2, mod)) % mod)) % mod;
+            num--;
+        }
+
+        return res;
+    }
+
+private long exp(long x, int y, int mod) {
+        long res = 1;
+        x %= mod;
+
+        while (y > 0)
+        {
+            if ((y & 1) != 0)
+                res = (res * x) % mod;
+
+            y >>= 1;
+            x = (x * x) % mod;
+        }
+
+        return res;
+    }
