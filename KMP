@@ -1,0 +1,32 @@
+public int kmp(String text, String pattern) {
+        int n = pattern.length();
+        int[][] dfa = new int[n][26];
+
+        computeDFA(dfa, pattern, n);
+        int state = 0;
+
+        for (int i = 0; i < text.length(); i++)
+        {
+            state = dfa[state][text.charAt(i) - 'a'];
+            if (state == n)
+                return i - n + 1;
+        }
+
+        return -1;
+    }
+
+    private void computeDFA(int[][] dfa, String needle, int n) {
+        int x = 0;
+        dfa[0][needle.charAt(0) - 'a'] = 1;
+
+        for (int j = 1; j < n; j++)
+        {
+            int ch = needle.charAt(j) - 'a';
+
+            for (int i = 0; i < 26; i++)
+                dfa[j][i] = dfa[x][i];
+
+            dfa[j][ch] = j + 1;
+            x = dfa[x][ch];
+        }
+    }
