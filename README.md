@@ -6,3 +6,4 @@ This repository contains all the DSA functions.
 3. nCr - Finds nCr mod p
 4. KMP - string matching using KMP algorithm
 5. bipartite - Detect whether a graph is Bipartite
+6. Main - java template
