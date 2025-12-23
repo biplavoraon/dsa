@@ -15,14 +15,14 @@ class Main
         {
             int a = Integer.parseInt(input.readLine());
 
-            output.append(String.valueOf(obj.solve(a))).append("\n");
+            output.append(obj.solve(a)).append("\n");
         }
 
         System.out.print(output);
     }
 
-    private int solve(int a)
+    private String solve(int a)
     {
-        return a;
+        return "";
     }
 }
