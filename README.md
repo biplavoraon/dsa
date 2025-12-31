@@ -9,4 +9,4 @@ Sr. No. | File Name | Description | Link
 4| KMP | string matching using KMP algorithm
 5| bipartite | Detect whether a graph is Bipartite
 6| Main | java boiler plate template
-7| Union-find | Gives union-find with path halving | https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/UF.java.html
+7| null| Gives union-find with path halving | https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/UF.java.html
