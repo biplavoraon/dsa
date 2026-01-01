@@ -10,3 +10,4 @@ Sr. No. | File Name | Description | Link
 5| bipartite | Detect whether a graph is Bipartite
 6| Main | java boiler plate template
 7| null| Gives union-find with path halving | https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/UF.java.html
+8| XORC | Good problem | https://codeforces.com/gym/106179/problem/C
