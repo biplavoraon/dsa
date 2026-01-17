@@ -14,3 +14,4 @@ Sr. No. | File Name | Description | Link
 9 | Mods| Good problem | https://codeforces.com/contest/2179/problem/C
 10| Popcount | Good problem | https://codeforces.com/contest/2179/problem/D
 11 | Hole | Good problem | https://leetcode.com/problems/maximize-area-of-square-hole-in-grid/?envType=daily-question&envId=2026-01-15
+12 | XOR | Good problem | https://leetcode.com/problems/number-of-alternating-xor-partitions/description/
