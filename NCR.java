@@ -1,0 +1,97 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class NCR
+{
+    int MAX = 32;
+    int MOD = 1_000_000_007;
+
+    long[] factorial = new long[MAX];
+    long[] factInverse = new long[MAX];
+    long[] numInverse = new long[MAX];
+
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int tc = Integer.parseInt(br.readLine());
+        StringBuilder output = new StringBuilder();
+        Main obj = new Main();
+
+        while (tc-- > 0)
+        {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            long n = Long.parseLong(st.nextToken());
+            long k = Long.parseLong(st.nextToken());
+
+            output.append(obj.solve(n, k)).append("\n");
+        }
+
+        System.out.print(output);
+    }
+
+    private long solve(long n, long k) {
+         if (n == 1)
+             return 0;
+
+         long ans = 1, curr = 2;
+         int i;
+         setNumInverse();
+
+         for (i = 1; i <= 32; i++)
+         {
+             curr = curr << 1;
+             if (curr > n)
+                 break;
+
+             for (int j = 0; j <= i; j++)
+             {
+                 long cost = 1 + (i + j);
+
+                 if (cost <= k)
+                     ans += computenCr(i, j);
+             }
+         }
+
+         if (i + 1 <= k)
+             ans++;
+
+         return n - ans;
+    }
+
+    private long computenCr(int n, int r)
+    {
+        return (((factorial[n] * factInverse[r]) % MOD) * factInverse[n - r]) % MOD;
+    }
+
+    private void setNumInverse()
+    {
+        numInverse[0] = 1;
+        numInverse[1] = 1;
+
+        for (int i = 2; i < MAX; i++)
+            numInverse[i] = (numInverse[MOD % i] * (MOD - MOD / i)) % MOD;
+
+        setFactInverse();
+    }
+
+    private void setFactInverse()
+    {
+        factInverse[0] = 1;
+        factInverse[1] = 1;
+
+        for (int i = 2; i < MAX; i++)
+            factInverse[i] = (numInverse[i] * factInverse[i - 1]) % MOD;
+
+        setFactorial();
+    }
+
+    private void setFactorial()
+    {
+        factorial[0] = 1;
+
+        for (int i = 1; i < MAX; i++)
+            factorial[i] = (factorial[i - 1] * i) % MOD;
+    }
+}
