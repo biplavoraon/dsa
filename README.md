@@ -17,3 +17,4 @@ Sr. No. | File Name | Description | Link
 12 | XOR | Good problem | https://leetcode.com/problems/number-of-alternating-xor-partitions/description/
 13 | Robot | Good problem | https://codeforces.com/contest/2185/problem/E
 14 | Bitwise | Good problem | https://leetcode.com/problems/construct-the-minimum-bitwise-array-ii/description/?envType=daily-question&envId=2026-01-21
+15 | Codechef | Template for Codechef
